@@ -184,7 +184,7 @@ function Field({ label, id, as = 'input', error, optional, required, ...rest }) 
   const describedBy = error ? `${id}-error` : undefined
   return (
     <label htmlFor={id} className="block">
-      <span className="block text-sm font-medium text-ink mb-1.5">
+      <span className="block text-sm font-medium text-ocean-dark mb-1.5">
         {label}
         {optional && <span className="text-ink/50 font-normal"> (optional)</span>}
         {required && <span className="text-ocean" aria-hidden="true"> *</span>}
@@ -212,7 +212,7 @@ function Field({ label, id, as = 'input', error, optional, required, ...rest }) 
 function SelectField({ label, id, value, onChange, options, optional }) {
   return (
     <label htmlFor={id} className="block">
-      <span className="block text-sm font-medium text-ink mb-1.5">
+      <span className="block text-sm font-medium text-ocean-dark mb-1.5">
         {label}
         {optional && <span className="text-ink/50 font-normal"> (optional)</span>}
       </span>

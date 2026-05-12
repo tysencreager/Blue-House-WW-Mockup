@@ -23,7 +23,7 @@ export default function Gallery() {
             <p className="uppercase tracking-[0.2em] text-xs text-ocean font-semibold mb-4">
               Recent Work
             </p>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl text-ink font-semibold leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl text-ocean-dark font-semibold leading-tight">
               A small sample of past projects.
             </h2>
             <p className="mt-4 text-ink/70 text-lg">
@@ -43,7 +43,7 @@ export default function Gallery() {
                   className={`px-4 py-2 rounded-full text-sm font-medium border transition-colors ${
                     selected
                       ? 'bg-ocean text-cream border-ocean'
-                      : 'bg-cream text-ink border-sand hover:border-ocean/50'
+                      : 'bg-cream text-ocean-dark border-sand hover:border-ocean/50 hover:bg-cream'
                   }`}
                 >
                   {cat}

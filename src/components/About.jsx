@@ -9,7 +9,7 @@ export default function About() {
           <p className="uppercase tracking-[0.2em] text-xs text-ocean font-semibold mb-4">
             About the Shop
           </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl text-ink font-semibold leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl text-ocean-dark font-semibold leading-tight">
             {about.heading}
           </h2>
         </Reveal>
@@ -41,7 +41,7 @@ export default function About() {
                   />
                 </svg>
               </div>
-              <h3 className="font-display text-xl text-ink font-semibold mb-2">{h.label}</h3>
+              <h3 className="font-display text-xl text-ocean-dark font-semibold mb-2">{h.label}</h3>
               <p className="text-ink/70 leading-relaxed text-base">{h.detail}</p>
             </div>
           </Reveal>

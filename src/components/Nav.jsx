@@ -23,44 +23,38 @@ export default function Nav() {
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-40 transition-all duration-300 ${
+      className={`fixed top-0 inset-x-0 z-40 transition-all duration-300 backdrop-blur-md border-b ${
         scrolled || open
-          ? 'bg-cream/95 backdrop-blur shadow-sm'
-          : 'bg-transparent'
+          ? 'bg-cream/85 border-ink/5 shadow-sm'
+          : 'bg-cream/55 border-cream/40'
       }`}
     >
       <nav
-        className="container-narrow flex items-center justify-between py-4 sm:py-5 px-6 sm:px-8"
+        className="container-narrow flex items-center justify-between py-3 sm:py-4 px-6 sm:px-8"
         aria-label="Primary"
       >
         <a
           href="#top"
-          className="flex items-center gap-3 group"
+          className="flex items-center gap-3 min-w-0 group"
           onClick={close}
           aria-label={business.name}
         >
           <img
             src={logoImage}
             alt=""
-            className="h-9 sm:h-10 w-auto"
+            className="h-9 sm:h-10 w-auto shrink-0 transition-transform duration-300 group-hover:scale-105"
           />
-          <span
-            className={`hidden sm:inline font-display text-lg sm:text-xl font-semibold transition-colors ${
-              scrolled || open ? 'text-ink' : 'text-cream drop-shadow'
-            }`}
-          >
-            {business.shortName}
+          <span className="truncate font-display text-base sm:text-lg lg:text-xl font-semibold text-ocean-dark">
+            {business.name}
           </span>
         </a>
 
-        <ul className="hidden md:flex items-center gap-8">
+        <ul className="hidden md:flex items-center gap-7 lg:gap-8 shrink-0">
           {links.map((l) => (
             <li key={l.href}>
               <a
                 href={l.href}
-                className={`text-sm font-medium tracking-wide transition-colors hover:text-ocean ${
-                  scrolled ? 'text-ink' : 'text-cream drop-shadow'
-                }`}
+                className="text-sm font-medium tracking-wide text-ink hover:text-ocean transition-colors"
               >
                 {l.label}
               </a>
@@ -69,7 +63,7 @@ export default function Nav() {
           <li>
             <a
               href="#contact"
-              className="inline-flex items-center rounded-full bg-ocean text-cream px-5 py-2 text-sm font-semibold shadow-soft hover:bg-ocean-dark transition-colors"
+              className="inline-flex items-center rounded-full bg-ocean text-cream px-5 py-2 text-sm font-semibold shadow-soft hover:bg-ocean-dark hover:-translate-y-0.5 transition-all"
             >
               Get a Quote
             </a>
@@ -78,7 +72,7 @@ export default function Nav() {
 
         <button
           type="button"
-          className={`md:hidden p-2 rounded ${scrolled || open ? 'text-ink' : 'text-cream'}`}
+          className="md:hidden p-2 rounded text-ink"
           aria-label={open ? 'Close menu' : 'Open menu'}
           aria-expanded={open}
           aria-controls="mobile-nav"
@@ -95,7 +89,7 @@ export default function Nav() {
       </nav>
 
       {open && (
-        <div id="mobile-nav" className="md:hidden border-t border-sand bg-cream">
+        <div id="mobile-nav" className="md:hidden border-t border-ink/5 bg-cream/95 backdrop-blur-md">
           <ul className="container-narrow flex flex-col py-2 px-6">
             {links.map((l) => (
               <li key={l.href}>
@@ -123,4 +117,3 @@ export default function Nav() {
     </header>
   )
 }
-

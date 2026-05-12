@@ -20,7 +20,7 @@ export const heroImage = '/images/header-image.webp'
 export const business = {
   name: 'Ludlow Staircase & Railing',
   shortName: 'Ludlow',
-  tagline: 'Custom Woodworking, Crafted to Last',
+  tagline: 'Custom Staircases & Railings, Built to Last',
   // Short intro that appears under the hero buttons. Keep it to one sentence.
   heroSubtext:
     'Handcrafted staircases, railings, furniture, and built-ins made one piece at a time.',

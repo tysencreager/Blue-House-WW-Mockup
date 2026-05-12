@@ -1,4 +1,4 @@
-import { business } from '../data/site.js'
+import { business, logoImage } from '../data/site.js'
 
 const links = [
   { href: '#work', label: 'Work' },
@@ -13,6 +13,15 @@ export default function Footer() {
     <footer className="bg-ink text-cream/80">
       <div className="container-narrow px-6 sm:px-8 py-14 grid gap-10 md:grid-cols-3 items-start">
         <div>
+          {/* LANCE: The CSS filter (brightness-0 invert) forces the logo
+              to render white on the dark footer background. If you swap
+              in a logo that's already designed for dark backgrounds,
+              remove the `filter brightness-0 invert` classes below. */}
+          <img
+            src={logoImage}
+            alt={business.name}
+            className="h-11 sm:h-12 w-auto mb-4 filter brightness-0 invert"
+          />
           <p className="font-display text-xl text-cream font-semibold">{business.name}</p>
           <p className="mt-2 text-sm leading-relaxed max-w-xs">
             {business.tagline}. Small shop, careful work.

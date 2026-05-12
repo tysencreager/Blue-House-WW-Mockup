@@ -9,7 +9,7 @@ export default function Testimonials() {
           <p className="uppercase tracking-[0.2em] text-xs text-ocean font-semibold mb-4">
             What Clients Say
           </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl text-ink font-semibold leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl text-ocean-dark font-semibold leading-tight">
             Word of mouth is the only marketing we’ve ever needed.
           </h2>
         </Reveal>
@@ -27,7 +27,7 @@ export default function Testimonials() {
                 “{t.quote}”
               </blockquote>
               <figcaption className="mt-6 pt-5 border-t border-sand/80">
-                <p className="font-display text-ink font-semibold">{t.name}</p>
+                <p className="font-display text-ocean-dark font-semibold">{t.name}</p>
                 <p className="text-sm text-ocean">{t.project}</p>
               </figcaption>
             </Reveal>
