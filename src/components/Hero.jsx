@@ -15,8 +15,8 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-br from-wood-dark via-wood to-ocean-dark" />
 
       {/* LANCE: To use your own hero photo, drop a wide image at
-          /public/images/hero.jpg (suggested 2400 x 1400 px, under ~500KB)
-          and set heroImage in src/data/site.js to '/images/hero.jpg'. */}
+          /public/images/header-image.webp and update heroImage in
+          src/data/site.js. */}
       {heroImage && (
         <img
           src={heroImage}
@@ -28,11 +28,14 @@ export default function Hero() {
         />
       )}
 
+      {/* Navy overlay tint — pulls the photo into brand colors and keeps
+          text readable across any background. */}
+      <div aria-hidden="true" className="absolute inset-0 bg-ocean/50 mix-blend-multiply" />
+      <div aria-hidden="true" className="absolute inset-0 bg-ocean-dark/35" />
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(250,246,240,0.18),transparent_55%)]"
+        className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(250,246,240,0.12),transparent_55%)]"
       />
-      <div aria-hidden="true" className="absolute inset-0 bg-ink/40" />
 
       <div className="container-narrow relative z-10 px-6 sm:px-8 py-32 sm:py-40 text-cream">
         <p className="uppercase tracking-[0.25em] text-xs sm:text-sm text-sand/90 mb-6 motion-safe:animate-[heroFadeUp_700ms_120ms_ease-out_both]">

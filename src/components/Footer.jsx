@@ -36,11 +36,11 @@ export default function Footer() {
             href={business.instagram}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Blue House Wood Works on Instagram"
+            aria-label={`${business.name} on Instagram`}
             className="inline-flex items-center gap-2 text-sm hover:text-cream"
           >
             <InstagramIcon />
-            @bluehouse.woodworks
+            Follow on Instagram
           </a>
         </div>
       </div>

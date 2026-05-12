@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { business } from '../data/site.js'
+import { business, logoImage } from '../data/site.js'
 
 const links = [
   { href: '#work', label: 'Work' },
@@ -35,16 +35,21 @@ export default function Nav() {
       >
         <a
           href="#top"
-          className="flex items-center gap-2 group"
+          className="flex items-center gap-3 group"
           onClick={close}
+          aria-label={business.name}
         >
-          <Logo />
+          <img
+            src={logoImage}
+            alt=""
+            className="h-9 sm:h-10 w-auto"
+          />
           <span
-            className={`font-display text-lg sm:text-xl font-semibold transition-colors ${
+            className={`hidden sm:inline font-display text-lg sm:text-xl font-semibold transition-colors ${
               scrolled || open ? 'text-ink' : 'text-cream drop-shadow'
             }`}
           >
-            {business.name}
+            {business.shortName}
           </span>
         </a>
 
@@ -119,13 +124,3 @@ export default function Nav() {
   )
 }
 
-function Logo() {
-  return (
-    <span
-      aria-hidden="true"
-      className="inline-flex items-center justify-center w-9 h-9 rounded-md bg-ocean text-cream font-display font-bold text-base shadow-soft"
-    >
-      BH
-    </span>
-  )
-}

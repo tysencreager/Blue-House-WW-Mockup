@@ -65,7 +65,7 @@ export default function Contact() {
           <dl className="mt-10 space-y-5 text-cream/90">
             <ContactItem label="Email" href={`mailto:${business.email}`} value={business.email} />
             <ContactItem label="Phone" href={`tel:${business.phone.replace(/[^0-9+]/g, '')}`} value={business.phone} />
-            <ContactItem label="Instagram" href={business.instagram} value="@bluehouse.woodworks" external />
+            <ContactItem label="Instagram" href={business.instagram} value="Follow on Instagram" external />
             <div>
               <dt className="text-xs uppercase tracking-widest text-sand/80">Service Area</dt>
               <dd className="mt-1">{business.serviceArea}</dd>

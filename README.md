@@ -1,8 +1,8 @@
-# Blue House Wood Works — Website Mockup
+# Ludlow Staircase & Railing — Website Mockup
 
-A clean, single-page React mockup for Lance's custom woodworking business.
-Built with **Vite + React + Tailwind**. Designed to be easy to customize and
-deploy.
+A clean, single-page React mockup for Lance's custom woodworking business
+(previously branded Blue House Wood Works). Built with **Vite + React +
+Tailwind**. Designed to be easy to customize and deploy.
 
 ---
 
@@ -84,8 +84,8 @@ Defined in `tailwind.config.js`:
 | `sand`       | `#F1E7D3` | Card borders, subtle sections  |
 | `wood`       | `#8B5A2B` | Primary warm brown             |
 | `wood-dark`  | `#6B4423` | Deeper brown, hero gradient    |
-| `ocean`      | `#2C5F7F` | Primary blue accent, CTAs      |
-| `ocean-dark` | `#1F4A66` | Contact section background     |
+| `ocean`      | `#1B2D5B` | Primary navy accent, CTAs      |
+| `ocean-dark` | `#0F1F44` | Contact section background     |
 | `ink`        | `#2A1F17` | Body text, footer background   |
 
 Typography: **Fraunces** (serif headers, modern-craftsman feel) paired with

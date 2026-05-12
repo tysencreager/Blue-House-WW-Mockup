@@ -12,10 +12,12 @@ export default {
           DEFAULT: '#8B5A2B',
           dark: '#6B4423',
         },
+        // 'ocean' tokens are kept as class names for backwards compatibility,
+        // but the values are now navy blue to match the Ludlow brand.
         ocean: {
-          light: '#4A7A96',
-          DEFAULT: '#2C5F7F',
-          dark: '#1F4A66',
+          light: '#3A4D85',
+          DEFAULT: '#1B2D5B',
+          dark: '#0F1F44',
         },
         ink: '#2A1F17',
       },
