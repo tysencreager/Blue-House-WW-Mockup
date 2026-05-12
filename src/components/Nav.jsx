@@ -35,19 +35,17 @@ export default function Nav() {
       >
         <a
           href="#top"
-          className="flex items-center gap-3 min-w-0 group"
+          className="flex items-center gap-2 sm:gap-3 min-w-0 group"
           onClick={close}
           aria-label={business.name}
         >
           <img
             src={logoImage}
             alt=""
-            className="h-9 sm:h-10 w-auto shrink-0 transition-transform duration-300 group-hover:scale-105"
+            className="h-8 sm:h-10 w-auto shrink-0 transition-transform duration-300 group-hover:scale-105"
           />
-          <span className="font-display text-base sm:text-lg lg:text-xl font-semibold text-ocean-dark whitespace-nowrap">
-            {/* Short name on mobile, full name on tablet+ so nothing overflows. */}
-            <span className="sm:hidden">{business.shortName}</span>
-            <span className="hidden sm:inline">{business.name}</span>
+          <span className="font-display text-[13px] sm:text-lg lg:text-xl font-semibold text-ocean-dark whitespace-nowrap leading-tight">
+            {business.name}
           </span>
         </a>
 
