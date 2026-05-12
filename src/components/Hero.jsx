@@ -38,17 +38,14 @@ export default function Hero() {
       />
 
       <div className="container-narrow relative z-10 px-6 sm:px-8 py-32 sm:py-40 text-cream">
-        <p className="uppercase tracking-[0.25em] text-xs sm:text-sm text-sand/90 mb-6 motion-safe:animate-[heroFadeUp_700ms_120ms_ease-out_both]">
-          {business.name}
-        </p>
-        <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl font-semibold leading-[1.05] max-w-4xl motion-safe:animate-[heroFadeUp_900ms_240ms_ease-out_both]">
+        <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl font-semibold leading-[1.05] max-w-4xl motion-safe:animate-[heroFadeUp_900ms_120ms_ease-out_both]">
           {business.tagline}
         </h1>
-        <p className="mt-6 max-w-2xl text-base sm:text-lg text-cream/90 motion-safe:animate-[heroFadeUp_900ms_420ms_ease-out_both]">
+        <p className="mt-6 max-w-2xl text-base sm:text-lg text-cream/90 motion-safe:animate-[heroFadeUp_900ms_300ms_ease-out_both]">
           {business.heroSubtext}
         </p>
 
-        <div className="mt-10 flex flex-wrap gap-4 motion-safe:animate-[heroFadeUp_900ms_580ms_ease-out_both]">
+        <div className="mt-10 flex flex-wrap gap-4 motion-safe:animate-[heroFadeUp_900ms_460ms_ease-out_both]">
           <a
             href="#work"
             className="group inline-flex items-center rounded-full bg-cream text-ink px-7 py-3 font-semibold shadow-soft hover:bg-sand transition-all hover:-translate-y-0.5"
