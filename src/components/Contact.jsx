@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { business, projectTypes } from '../data/site.js'
+import Reveal from './Reveal.jsx'
 
 const initial = {
   name: '',
@@ -50,7 +51,7 @@ export default function Contact() {
   return (
     <section id="contact" className="section bg-ocean-dark text-cream">
       <div className="container-narrow grid lg:grid-cols-12 gap-12">
-        <div className="lg:col-span-5">
+        <Reveal className="lg:col-span-5">
           <p className="uppercase tracking-[0.2em] text-xs text-sand font-semibold mb-4">
             Start a Project
           </p>
@@ -70,9 +71,11 @@ export default function Contact() {
               <dd className="mt-1">{business.serviceArea}</dd>
             </div>
           </dl>
-        </div>
+        </Reveal>
 
-        <form
+        <Reveal
+          as="form"
+          delay={140}
           onSubmit={onSubmit}
           noValidate
           className="lg:col-span-7 rounded-2xl bg-cream text-ink p-6 sm:p-8 shadow-soft"
@@ -147,12 +150,12 @@ export default function Contact() {
             <button
               type="submit"
               disabled={status === 'submitting'}
-              className="inline-flex items-center rounded-full bg-ocean text-cream px-7 py-3 font-semibold shadow-soft hover:bg-ocean-dark disabled:opacity-60 disabled:cursor-not-allowed transition-colors"
+              className="inline-flex items-center rounded-full bg-ocean text-cream px-7 py-3 font-semibold shadow-soft hover:bg-ocean-dark hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0 transition-all"
             >
               {status === 'submitting' ? 'Sending…' : 'Send Message'}
             </button>
           </div>
-        </form>
+        </Reveal>
       </div>
     </section>
   )

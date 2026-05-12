@@ -1,10 +1,21 @@
-import { useCallback, useEffect, useRef } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 
 export default function Lightbox({ items, index, onClose, onChange }) {
   const closeRef = useRef(null)
+  const [mounted, setMounted] = useState(false)
+  const [failed, setFailed] = useState(false)
   const item = items[index]
   const hasPrev = index > 0
   const hasNext = index < items.length - 1
+
+  useEffect(() => {
+    const id = requestAnimationFrame(() => setMounted(true))
+    return () => cancelAnimationFrame(id)
+  }, [])
+
+  useEffect(() => {
+    setFailed(false)
+  }, [index])
 
   const next = useCallback(() => {
     if (hasNext) onChange(index + 1)
@@ -37,7 +48,9 @@ export default function Lightbox({ items, index, onClose, onChange }) {
       role="dialog"
       aria-modal="true"
       aria-label={item.title}
-      className="fixed inset-0 z-50 bg-ink/90 flex items-center justify-center p-4 sm:p-8"
+      className={`fixed inset-0 z-50 bg-ink/90 flex items-center justify-center p-4 sm:p-8 transition-opacity duration-200 ${
+        mounted ? 'opacity-100' : 'opacity-0'
+      }`}
       onClick={onClose}
     >
       <button
@@ -80,24 +93,23 @@ export default function Lightbox({ items, index, onClose, onChange }) {
 
       <figure
         onClick={(e) => e.stopPropagation()}
-        className="max-w-5xl w-full max-h-full flex flex-col items-center"
+        className={`max-w-5xl w-full max-h-full flex flex-col items-center transition-all duration-300 ${
+          mounted ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+        }`}
       >
-        <div className={`w-full max-h-[78vh] rounded-2xl overflow-hidden bg-wood ${item.aspect === 'portrait' ? 'aspect-[4/5]' : 'aspect-[4/3]'}`}>
-          {item.src ? (
+        <div className={`relative w-full max-h-[78vh] rounded-2xl overflow-hidden bg-wood ${item.aspect === 'portrait' ? 'aspect-[4/5]' : 'aspect-[4/3]'}`}>
+          <div className="absolute inset-0 bg-gradient-to-br from-wood-dark via-wood to-ocean-dark" />
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-cream text-center px-6">
+            <p className="uppercase tracking-[0.2em] text-xs text-cream/80 mb-2">{item.category}</p>
+            <p className="font-display text-2xl sm:text-3xl">{item.title}</p>
+          </div>
+          {item.src && !failed && (
             <img
               src={item.src}
               alt={item.alt}
-              className="w-full h-full object-contain bg-ink"
+              onError={() => setFailed(true)}
+              className="absolute inset-0 w-full h-full object-contain bg-ink"
             />
-          ) : (
-            <div className="relative w-full h-full">
-              <div className="absolute inset-0 bg-gradient-to-br from-wood-dark via-wood to-ocean-dark" />
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-cream text-center px-6">
-                <p className="uppercase tracking-[0.2em] text-xs text-cream/80 mb-2">{item.category}</p>
-                <p className="font-display text-2xl sm:text-3xl">{item.title}</p>
-                <p className="mt-3 text-sm text-cream/70">Photo placeholder</p>
-              </div>
-            </div>
           )}
         </div>
         <figcaption className="mt-4 text-center text-cream">

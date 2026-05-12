@@ -43,6 +43,16 @@ swap out photos.
 
 ---
 
+## About the placeholder images
+
+The hero and gallery currently point at free-to-use **Unsplash** photos so
+Lance can preview the design with real photography. These are *not* photos
+of his work — they're stand-ins. Swap them out (instructions below) before
+sharing the live site widely. If any Unsplash URL ever 404s, the gradient
+wood-tone tile automatically takes its place — the layout won't break.
+
+---
+
 ## Adding your own photos
 
 1. Create a folder called `public/images/` in the project root.

@@ -1,23 +1,26 @@
 import { testimonials } from '../data/site.js'
+import Reveal from './Reveal.jsx'
 
 export default function Testimonials() {
   return (
     <section id="testimonials" className="section bg-cream">
       <div className="container-narrow">
-        <div className="max-w-2xl mb-12">
+        <Reveal className="max-w-2xl mb-12">
           <p className="uppercase tracking-[0.2em] text-xs text-ocean font-semibold mb-4">
             What Clients Say
           </p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl text-ink font-semibold leading-tight">
             Word of mouth is the only marketing we’ve ever needed.
           </h2>
-        </div>
+        </Reveal>
 
         <ul className="grid gap-6 md:grid-cols-2">
           {testimonials.map((t, i) => (
-            <li
+            <Reveal
+              as="li"
               key={i}
-              className="relative rounded-2xl bg-sand/40 border border-sand p-7 sm:p-8 shadow-sm"
+              delay={(i % 2) * 120}
+              className="relative rounded-2xl bg-sand/40 border border-sand p-7 sm:p-8 shadow-sm hover:shadow-soft hover:-translate-y-1 hover:bg-sand/60 transition-all duration-300"
             >
               <Quote />
               <blockquote className="text-ink/85 text-lg leading-relaxed">
@@ -27,7 +30,7 @@ export default function Testimonials() {
                 <p className="font-display text-ink font-semibold">{t.name}</p>
                 <p className="text-sm text-ocean">{t.project}</p>
               </figcaption>
-            </li>
+            </Reveal>
           ))}
         </ul>
       </div>

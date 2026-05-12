@@ -26,6 +26,20 @@ export default {
       boxShadow: {
         soft: '0 10px 30px -12px rgba(42, 31, 23, 0.25)',
       },
+      keyframes: {
+        heroFadeUp: {
+          '0%':   { opacity: '0', transform: 'translateY(14px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        heroZoom: {
+          '0%':   { transform: 'scale(1.08)' },
+          '100%': { transform: 'scale(1)' },
+        },
+        heroBounce: {
+          '0%, 100%': { transform: 'translate(-50%, 0)' },
+          '50%':      { transform: 'translate(-50%, 8px)' },
+        },
+      },
     },
   },
   plugins: [],

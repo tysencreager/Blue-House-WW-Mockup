@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { galleryCategories, galleryItems } from '../data/site.js'
 import Lightbox from './Lightbox.jsx'
+import Reveal from './Reveal.jsx'
 
 export default function Gallery() {
   const [filter, setFilter] = useState('All')
@@ -18,7 +19,7 @@ export default function Gallery() {
     <section id="work" className="section bg-sand/40">
       <div className="container-narrow">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
-          <div className="max-w-xl">
+          <Reveal className="max-w-xl">
             <p className="uppercase tracking-[0.2em] text-xs text-ocean font-semibold mb-4">
               Recent Work
             </p>
@@ -28,7 +29,7 @@ export default function Gallery() {
             <p className="mt-4 text-ink/70 text-lg">
               Every piece is one-of-one. Filter by category to see the kind of work that fits your project.
             </p>
-          </div>
+          </Reveal>
 
           <div role="tablist" aria-label="Filter projects" className="flex flex-wrap gap-2">
             {galleryCategories.map((cat) => {
@@ -54,7 +55,7 @@ export default function Gallery() {
 
         <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {filtered.map((item, idx) => (
-            <li key={item.id}>
+            <Reveal as="li" key={item.id} delay={(idx % 3) * 80}>
               <button
                 type="button"
                 onClick={() => setActiveIndex(idx)}
@@ -64,10 +65,10 @@ export default function Gallery() {
                 <GalleryTile item={item} />
                 <div className="pt-3">
                   <p className="text-sm text-ocean font-medium">{item.category}</p>
-                  <p className="font-display text-lg text-ink">{item.title}</p>
+                  <p className="font-display text-lg text-ink group-hover:text-ocean transition-colors">{item.title}</p>
                 </div>
               </button>
-            </li>
+            </Reveal>
           ))}
         </ul>
       </div>
@@ -86,21 +87,23 @@ export default function Gallery() {
 
 function GalleryTile({ item }) {
   const aspectClass = item.aspect === 'portrait' ? 'aspect-[4/5]' : 'aspect-[4/3]'
+  const [failed, setFailed] = useState(false)
+  const showImage = item.src && !failed
 
   return (
     <div
       className={`relative overflow-hidden rounded-2xl shadow-soft bg-wood ${aspectClass}`}
     >
-      {item.src ? (
+      {/* Placeholder always renders behind the image so it shows on load + on error. */}
+      <PlaceholderArt label={item.title} category={item.category} />
+      {showImage && (
         <img
           src={item.src}
           alt={item.alt}
           loading="lazy"
-          className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          onError={() => setFailed(true)}
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
-      ) : (
-        // LANCE: Placeholder — replace `src` in src/data/site.js to use a real photo.
-        <PlaceholderArt label={item.title} category={item.category} />
       )}
 
       <div
