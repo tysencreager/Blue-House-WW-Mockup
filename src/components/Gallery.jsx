@@ -40,7 +40,7 @@ export default function Gallery() {
                   role="tab"
                   aria-selected={selected}
                   onClick={() => setFilter(cat)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium border transition-colors ${
+                  className={`px-4 py-2.5 sm:py-2 min-h-[40px] rounded-full text-sm font-medium border transition-colors ${
                     selected
                       ? 'bg-ocean text-cream border-ocean'
                       : 'bg-cream text-ocean-dark border-sand hover:border-ocean/50 hover:bg-cream'

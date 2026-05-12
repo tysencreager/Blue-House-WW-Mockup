@@ -28,8 +28,23 @@ h1, h2, h3, h4 {
 
 .section {
   @apply py-20 sm:py-24 px-6 sm:px-8;
+  /* Offset anchor jumps so the sticky glass nav doesn't hide section tops. */
+  scroll-margin-top: 80px;
 }
 
 .container-narrow {
   @apply max-w-6xl mx-auto;
+}
+
+/* Prevent iOS from zooming in when a form field gains focus. */
+input,
+select,
+textarea {
+  font-size: 16px;
+}
+
+/* Block horizontal scroll caused by any rogue overflow on small screens.
+   Applied to body only — using `html` can break scroll-behavior on iOS. */
+body {
+  overflow-x: hidden;
 }

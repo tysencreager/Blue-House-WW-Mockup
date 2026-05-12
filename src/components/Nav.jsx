@@ -44,8 +44,10 @@ export default function Nav() {
             alt=""
             className="h-9 sm:h-10 w-auto shrink-0 transition-transform duration-300 group-hover:scale-105"
           />
-          <span className="truncate font-display text-base sm:text-lg lg:text-xl font-semibold text-ocean-dark">
-            {business.name}
+          <span className="font-display text-base sm:text-lg lg:text-xl font-semibold text-ocean-dark whitespace-nowrap">
+            {/* Short name on mobile, full name on tablet+ so nothing overflows. */}
+            <span className="sm:hidden">{business.shortName}</span>
+            <span className="hidden sm:inline">{business.name}</span>
           </span>
         </a>
 

@@ -37,25 +37,25 @@ export default function Hero() {
         className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(250,246,240,0.12),transparent_55%)]"
       />
 
-      <div className="container-narrow relative z-10 px-6 sm:px-8 py-32 sm:py-40 text-cream">
-        <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl font-semibold leading-[1.05] max-w-4xl motion-safe:animate-[heroFadeUp_900ms_120ms_ease-out_both]">
+      <div className="container-narrow relative z-10 px-6 sm:px-8 py-24 sm:py-32 lg:py-40 text-cream">
+        <h1 className="font-display text-[2rem] sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.1] sm:leading-[1.05] max-w-4xl motion-safe:animate-[heroFadeUp_900ms_120ms_ease-out_both]">
           {business.tagline}
         </h1>
-        <p className="mt-6 max-w-2xl text-base sm:text-lg text-cream/90 motion-safe:animate-[heroFadeUp_900ms_300ms_ease-out_both]">
+        <p className="mt-5 sm:mt-6 max-w-2xl text-base sm:text-lg text-cream/90 motion-safe:animate-[heroFadeUp_900ms_300ms_ease-out_both]">
           {business.heroSubtext}
         </p>
 
-        <div className="mt-10 flex flex-wrap gap-4 motion-safe:animate-[heroFadeUp_900ms_460ms_ease-out_both]">
+        <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-4 motion-safe:animate-[heroFadeUp_900ms_460ms_ease-out_both]">
           <a
             href="#work"
-            className="group inline-flex items-center rounded-full bg-cream text-ink px-7 py-3 font-semibold shadow-soft hover:bg-sand transition-all hover:-translate-y-0.5"
+            className="group inline-flex items-center justify-center rounded-full bg-cream text-ink px-7 py-3 font-semibold shadow-soft hover:bg-sand transition-all hover:-translate-y-0.5"
           >
             View Our Work
             <span aria-hidden="true" className="ml-2 transition-transform group-hover:translate-x-1">→</span>
           </a>
           <a
             href="#contact"
-            className="inline-flex items-center rounded-full border border-cream/70 text-cream px-7 py-3 font-semibold hover:bg-cream/10 transition-all hover:-translate-y-0.5"
+            className="inline-flex items-center justify-center rounded-full border border-cream/70 text-cream px-7 py-3 font-semibold hover:bg-cream/10 transition-all hover:-translate-y-0.5"
           >
             Get a Quote
           </a>
