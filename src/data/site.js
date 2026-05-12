@@ -9,12 +9,10 @@
 // =========================================================================
 // HERO IMAGE
 // -------------------------------------------------------------------------
-// Currently using a free Unsplash photo as a placeholder. Replace this URL
-// with your own photo (drop it at /public/images/hero.jpg and use
-// '/images/hero.jpg') once you have one you love.
+// Image lives at /public/images/header-image.png. Swap the file or change
+// the path below to update.
 // =========================================================================
-export const heroImage =
-  'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=2400&q=80'
+export const heroImage = '/images/header-image.png'
 
 export const business = {
   name: 'Blue House Wood Works',
@@ -58,23 +56,21 @@ export const about = {
 // =========================================================================
 export const galleryCategories = ['All', 'Furniture', 'Built-Ins', 'Cabinetry']
 
-// NOTE: The `src` URLs below point to free-to-use Unsplash photos as
-// placeholders so you can preview the design with real photography. They
-// aren't actually photos of Lance's work — swap them with real ones using
-// the steps above before sharing the live site widely.
-const u = (id, w = 1600) =>
-  `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=80`
-
+// Photos live at /public/images/. To swap one out, drop a new file in
+// that folder and update the `src` path below. Leave `src` as null to fall
+// back to the wood-tone gradient placeholder for that tile.
 export const galleryItems = [
-  { id: 1, title: 'Live-Edge Walnut Dining Table',     category: 'Furniture',  src: u('1551298370-9d3d53740c72'), alt: 'Live-edge walnut dining table with steel hairpin legs',           aspect: 'landscape' },
-  { id: 2, title: 'Floor-to-Ceiling Library Built-In', category: 'Built-Ins',  src: u('1581858726788-75bc0f6a952d', 1200), alt: 'White oak library built-in with rolling ladder',          aspect: 'portrait'  },
-  { id: 3, title: 'Shaker-Style Kitchen',              category: 'Cabinetry',  src: u('1493663284031-b7e3aefcae8e'), alt: 'Shaker-style painted kitchen with butcher block island',          aspect: 'landscape' },
-  { id: 4, title: 'Reclaimed Oak Console',             category: 'Furniture',  src: u('1567538096630-e0c55bd6374c'), alt: 'Reclaimed oak entryway console with iron hardware',               aspect: 'landscape' },
-  { id: 5, title: 'Mudroom Lockers',                   category: 'Built-Ins',  src: u('1556228453-efd6c1ff04f6', 1200), alt: 'Custom mudroom lockers with bench seating and cubbies',     aspect: 'portrait'  },
-  { id: 6, title: 'Walnut Bath Vanity',                category: 'Cabinetry',  src: u('1582582494705-f8ce0b0c24f0'), alt: 'Floating walnut bathroom vanity with vessel sinks',               aspect: 'landscape' },
-  { id: 7, title: 'Farmhouse Bench',                   category: 'Furniture',  src: u('1538688525198-9b88f6f53126'), alt: 'Reclaimed pine farmhouse dining bench',                           aspect: 'landscape' },
-  { id: 8, title: 'Office Wall Unit',                  category: 'Built-Ins',  src: u('1505691938895-1758d7feb511', 1200), alt: 'Home office wall unit with integrated desk and shelving', aspect: 'portrait'  },
-  { id: 9, title: 'Custom Pantry',                     category: 'Cabinetry',  src: u('1556909114-f6e7ad7d3136'), alt: 'Walk-in pantry with painted cabinets and butcher block counters', aspect: 'landscape' },
+  { id: 1, title: 'Live-Edge Walnut Dining Table',     category: 'Furniture',  src: '/images/walnut-dining-table.webp', alt: 'Live-edge walnut dining table with steel hairpin legs',           aspect: 'landscape' },
+  { id: 2, title: 'Floor-to-Ceiling Library Built-In', category: 'Built-Ins',  src: '/images/library.webp',             alt: 'White oak library built-in with rolling ladder',                  aspect: 'portrait'  },
+  { id: 3, title: 'Shaker-Style Kitchen',              category: 'Cabinetry',  src: '/images/shaker-kitchen.png',       alt: 'Shaker-style painted kitchen with butcher block island',          aspect: 'landscape' },
+  { id: 4, title: 'Reclaimed Oak Console',             category: 'Furniture',  src: '/images/oak-console.png',          alt: 'Reclaimed oak entryway console with iron hardware',               aspect: 'landscape' },
+  { id: 5, title: 'Mudroom Lockers',                   category: 'Built-Ins',  src: '/images/mudroom-locker.png',       alt: 'Custom mudroom lockers with bench seating and cubbies',           aspect: 'portrait'  },
+  { id: 6, title: 'Walnut Bath Vanity',                category: 'Cabinetry',  src: '/images/vanity.png',               alt: 'Floating walnut bathroom vanity with vessel sinks',               aspect: 'landscape' },
+  // No photo provided for the Farmhouse Bench yet — the placeholder gradient
+  // shows in its place. Drop a file in /public/images/ and point src here.
+  { id: 7, title: 'Farmhouse Bench',                   category: 'Furniture',  src: null,                               alt: 'Reclaimed pine farmhouse dining bench',                           aspect: 'landscape' },
+  { id: 8, title: 'Office Wall Unit',                  category: 'Built-Ins',  src: '/images/office.png',               alt: 'Home office wall unit with integrated desk and shelving',         aspect: 'portrait'  },
+  { id: 9, title: 'Custom Pantry',                     category: 'Cabinetry',  src: '/images/pantry.png',               alt: 'Walk-in pantry with painted cabinets and butcher block counters', aspect: 'landscape' },
 ]
 
 // =========================================================================
